@@ -1,0 +1,31 @@
+<html>
+   <head>
+      <title> Random String Generator </title>
+   </head>
+   <body>
+      <center>
+         <h2 style="color: blue"> Random String Generator </h2>
+         <form name="randomform">
+            <input id="create-random-string" type="button" value="Click to generate a new text" onClick="createRandomString();">
+            <br><br>
+            <b>
+               <p id="randomfield"> </p>
+            </b>
+         </form>
+      </center>
+   </body>
+</html>
+<script>
+   function createRandomString() {
+       var characters = "ABCDEFGHIJKLMNOPQRSTUVWXTZabcdefghiklmnopqrstuvwxyz";
+       var lenString = 10;
+       var randomstring = '';
+
+       for (var i=0; i<lenString; i++) {
+           var rnum = Math.floor(Math.random() * characters.length);
+           randomstring += characters.substring(rnum, rnum+1);
+       }
+
+       document.getElementById("randomfield").innerHTML = randomstring;
+   }
+</script>
